@@ -19,19 +19,19 @@ func worker(queue <-chan int, done chan<- bool) {
 
 func main() {
 
-	queue := make(chan int)
-	done := make(chan bool)
+	// queue := make(chan int)
+	// done := make(chan bool)
 
-	count := rand.Intn(5) + 1
-	fmt.Printf("Jumlah antrian: %d\n", count)
+	// count := rand.Intn(5) + 1
+	// fmt.Printf("Jumlah antrian: %d\n", count)
 
-	go worker(queue, done)
+	// go worker(queue, done)
 
-	for x := range count {
-		queue <- x + 1
-	}
+	// for x := range count {
+	// 	queue <- x + 1
+	// }
 
-	close(queue)
-	<-done
-	withgroup.Withgroup()
+	// close(queue)
+	// <-done
+	withgroup.WithGroup()
 }
