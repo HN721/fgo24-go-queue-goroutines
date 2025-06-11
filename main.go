@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	withgroup "goroutine/WithGroup"
 	"math/rand"
 	"time"
 )
@@ -32,4 +33,5 @@ func main() {
 
 	close(queue)
 	<-done
+	withgroup.Withgroup()
 }
